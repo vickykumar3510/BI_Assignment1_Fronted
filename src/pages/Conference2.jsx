@@ -1,0 +1,119 @@
+import Header from "../components/Header";
+import useFetch from "../../useFetch";
+
+const Conference2 = () => {
+  const { data, loading, error } = useFetch(
+    "http://localhost:3000/dashboard/title/Conference 2"
+  );
+  console.log(data);
+
+  return (
+    <main className="container bg-body-secondary">
+      <Header />
+
+      {loading && <p>Loading...</p>}
+      {error && <p>An error occurred while fetching the event.</p>}
+
+      <div className="row my-4">
+        {data && data.length > 0 ? (
+          data.map((d) => (
+            <div key={d._id} className="row">
+              <div className="col-8">
+                <p className="h1">{d.title}</p>
+                <p>
+                  Hosted By: <br/>
+                  <strong>Marketing Experts</strong>
+                </p>
+                <img
+                  src={d.image}
+                  alt={d.title}
+                  style={{
+                    width: "100%",
+                    height: "300px",
+                    objectFit: "cover",
+                    marginBottom: "1rem",
+                  }}
+                />
+
+                <h2>Details:</h2>
+                <p>
+                  Unlock the secrets of data-driven promotion at the Data-Driven Marketing Summit, carefully curated by Analytical Experts for professionals seeking measurable results. Enjoy this immersive session on November 5th, 11:00 AM to 1:30 PM at Analysis Tower, 101 Metrics Boulevard, New City. Keynote speakers Shruti Gupta, Data Analyst, and Deepak Mishra, PPC Strategist, will break down advanced ROI tracking, AI-powered tools, and automation systems for modern business. Additional highlights include take-home material kits, real-life campaign case studies, and a roundtable for audience questions. Eligibility starts at age 18, with a ticket fee of ₹3,600. Smart casual attire is recommended for all attendees.
+                </p>
+                <h2>Additional Information:</h2>
+                <p>
+                  <strong>Dress Code:</strong> Smart Casual
+                </p>
+                <p>
+                  <strong>Age Restrictions:</strong> 18 and above
+                </p>
+                <h3>Event Tags:</h3>
+                <button  className="btn btn-danger me-4">
+                  Marketing
+                </button>
+                <button  className="btn btn-danger">
+                  Digital
+                </button>
+              </div>
+            
+              <div className="col-4">
+                <div className="card p-3 mb-3">
+                  <div>{d.date} to</div>Mon Jul 13 02023 * 7:00:00 PM IST
+                  <div className="mt-3">
+                    Marketing City
+                    <br />
+                    789 Marketing Avenue, City
+                  </div>
+                  <div className="mt-3">
+                    <strong>₹</strong> 3,000
+                  </div>
+                </div>
+
+                <div className="card p-3">
+                  <h5>Speakers (2)</h5>
+                  <div className="d-flex mt-2">
+                    <div className="me-3 text-center">
+                      <img
+                        src="https://media.istockphoto.com/id/1387644817/photo/outdoor-image-of-gorgeous-positive-lady-with-charming-smile-and-loose-gray-hair-enjoying-nice.jpg?s=612x612&w=0&k=20&c=0GKocLBV61waG0dakvfkhX_TgOYahbqrnGO1xa7jULY="
+                        alt="Sarah Johnson"
+                        style={{
+                          width: "60px",
+                          height: "60px",
+                          borderRadius: "50%",
+                          objectFit: "cover",
+                        }}
+                      />
+                      <div>Sarah Johnson</div>
+                      <small>Marketing Manager</small>
+                    </div>
+                    <div className="text-center">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBvqzyx_zoi6q2c0Gd1XnE7wysD9PGOLe3-A&s"
+                        alt="Michael Brown"
+                        style={{
+                          width: "60px",
+                          height: "60px",
+                          borderRadius: "50%",
+                          objectFit: "cover",
+                        }}
+                      />
+                      <div>Michael Brown</div>
+                      <small>SEO Specialist</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-3 text-center">
+                  <button className="btn btn-danger w-50">RSVP</button>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No event found</p>
+        )}
+      </div>
+    </main>
+  );
+};
+
+export default Conference2;
