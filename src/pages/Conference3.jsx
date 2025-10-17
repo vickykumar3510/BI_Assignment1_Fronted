@@ -15,10 +15,10 @@ const Conference3 = () => {
       {loading && <p>Loading...</p>}
       {error && <p>An error occurred while fetching the event.</p>}
 
-      <div className="row my-4">
+      <div className="row">
         {data && data.length > 0 ? (
           data.map((d) => (
-            <div key={d._id} className="row">
+            <div key={d._id} className="row mb-4">
               <div className="col-8">
                 <p className="h1">{d.title}</p>
                 <p>
@@ -58,7 +58,7 @@ const Conference3 = () => {
             
               <div className="col-4">
                 <div className="card p-3 mb-3">
-                  <div>{d.date} to</div>Thu Oct 12 02023 * 7:00:00 PM IST
+                  <div>{d.date} to</div>Thu Oct 12 02023 at 7:00:00 PM IST
                   <div className="mt-3">
                     Marketing City
                     <br />

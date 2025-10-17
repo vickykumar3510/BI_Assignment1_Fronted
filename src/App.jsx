@@ -16,7 +16,7 @@ const App = () => {
     <main className="bg-body-secondary">
       <div className='container'>
       <Header />
-      <div className="d-flex justify-content-between align-items-center mb-3">
+      <div className="d-flex justify-content-between align-items-center">
       <p className="h1">Meetup Events</p>
       <EventType currentEvent={currentEvent} setCurrentEvent={setCurrentEvent} />
       </div>
@@ -28,8 +28,8 @@ const App = () => {
         {filteredEvents && filteredEvents.length > 0 ? (
           filteredEvents.map((m) => (
             <div className="col-4" key={m._id}>
-              <div className="card my-4">
-                <div>{m.eventType}</div>
+              <div className="card my-4 p-2">
+                <div className='mb-2'>{m.eventType}</div>
                 <Link to={
                     m.title === "Tech Conference"
                       ? "/techConference"

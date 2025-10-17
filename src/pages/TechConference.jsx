@@ -15,10 +15,10 @@ const TechConference = () => {
       {loading && <p>Loading...</p>}
       {error && <p>An error occurred while fetching the event.</p>}
 
-      <div className="row my-4">
+      <div className="row">
         {data && data.length > 0 ? (
           data.map((d) => (
-            <div key={d._id} className="row">
+            <div key={d._id} className="row mb-4">
               <div className="col-8">
                 <p className="h1">{d.title}</p>
                 <p>
@@ -63,8 +63,8 @@ const TechConference = () => {
             
               <div className="col-4">
                 <div className="card p-3 mb-3">
-                  <div>{d.date} to</div>Thu Jul 13 02023 * 7:00:00 PM IST
-                  <div className="mt-3">
+                  <div>{d.date} to </div> Thu Jul 13 02023 at 7:00:00 PM IST
+                  <div className="mt-3"> <i className="fas fa-map-marker-alt"></i>
                     Marketing City
                     <br />
                     789 Marketing Avenue, City
@@ -108,7 +108,7 @@ const TechConference = () => {
                   </div>
                 </div>
 
-                <div className="mt-3 text-center">
+                <div className="my-4 text-center">
                   <button className="btn btn-danger w-50">RSVP</button>
                 </div>
               </div>
