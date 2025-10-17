@@ -8,7 +8,8 @@ const DesignWorkshop = () => {
   console.log(data);
 
   return (
-    <main className="container bg-body-secondary">
+    <main className="bg-body-secondary">
+      <div className="container">
       <Header />
 
       {loading && <p>Loading...</p>}
@@ -111,6 +112,7 @@ const DesignWorkshop = () => {
         ) : (
           <p>No event found</p>
         )}
+      </div>
       </div>
     </main>
   );

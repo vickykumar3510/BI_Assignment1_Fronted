@@ -5,7 +5,7 @@ import EventType from './components/ByEventType'
 import { Link } from "react-router-dom"
 
 const App = () => {
-  const { data, loading, error } = useFetch("http://localhost:3000/dashboard")
+  const { data, loading, error } = useFetch("https://bi-assignment1-backend-gamma.vercel.app/dashboard")
   const [currentEvent, setCurrentEvent] = useState("")
 
   const filteredEvents = currentEvent
@@ -13,7 +13,8 @@ const App = () => {
     : data
 
   return (
-    <main className="container bg-body-secondary">
+    <main className="bg-body-secondary">
+      <div className='container'>
       <Header />
       <div className="d-flex justify-content-between align-items-center mb-3">
       <p className="h1">Meetup Events</p>
@@ -56,6 +57,7 @@ const App = () => {
         ) : (
           <p>No events found.</p>
         )}
+      </div>
       </div>
     </main>
   )
