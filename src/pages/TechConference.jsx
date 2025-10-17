@@ -3,9 +3,9 @@ import useFetch from "../../useFetch";
 
 const TechConference = () => {
   const { data, loading, error } = useFetch(
-    "http://localhost:3000/dashboard/title/Tech Conference"
+    "https://bi-assignment1-backend-gamma.vercel.app/dashboard/title/Tech Conference"
   );
-  console.log(data);
+  //console.log(data);
 
   return (
     <main className="bg-body-secondary">
