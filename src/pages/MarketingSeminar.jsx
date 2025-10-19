@@ -26,6 +26,7 @@ const MarketingSeminar = () => {
                   <strong>Marketing Experts</strong>
                 </p>
                 <img
+                className="img-fluid rounded"
                   src={d.image}
                   alt={d.title}
                   style={{
@@ -52,7 +53,7 @@ const MarketingSeminar = () => {
                   Marketing
                 </button>
                 <button  className="btn btn-danger">
-                  Digital
+                  Sales
                 </button>
               </div>
             

@@ -26,6 +26,7 @@ const Conference3 = () => {
                   <strong>Marketing Experts</strong>
                 </p>
                 <img
+                className="img-fluid rounded"
                   src={d.image}
                   alt={d.title}
                   style={{
@@ -52,7 +53,7 @@ const Conference3 = () => {
                   Marketing
                 </button>
                 <button  className="btn btn-danger">
-                  Digital
+                  Production
                 </button>
               </div>
             

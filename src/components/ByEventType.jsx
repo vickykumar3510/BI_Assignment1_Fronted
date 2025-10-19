@@ -7,8 +7,8 @@ const EventType = ({ currentEvent, setCurrentEvent }) => {
 
   return (
     <div>
-      <select onChange={eventSelectHandler} value={currentEvent} className="form-control">
-        <option value="">Select Event Type</option>
+      <select onChange={eventSelectHandler} value={currentEvent} className="form-control ms-auto" style={{ width: "250px", height: "38px" }}>
+        <option value="" >Select Event Type</option>
         <option value="Offline Event">Offline Event</option>
         <option value="Online Event">Online Event</option>
         <option value="Offline/Online Event">Both</option>

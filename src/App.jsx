@@ -5,19 +5,30 @@ import EventType from './components/ByEventType'
 import { Link } from "react-router-dom"
 
 const App = () => {
-  const { data, loading, error } = useFetch("https://bi-assignment1-backend-gamma.vercel.app/dashboard")
+  const { data = [], loading, error } = useFetch("https://bi-assignment1-backend-gamma.vercel.app/dashboard")
   const [currentEvent, setCurrentEvent] = useState("")
+  const [searchTerm, setSearchTerm] = useState("")
 
-  const filteredEvents = currentEvent
-    ? data.filter((event) => event.eventType === currentEvent)
-    : data
+  const filteredEvents = data
+  ? data.filter(event => {
+      const search = searchTerm.toLowerCase();
+      const inTitle = event.title.toLowerCase().includes(search);
+      const inTags = event.tags
+        ? (Array.isArray(event.tags)
+            ? event.tags.some(tag => tag.toLowerCase().includes(search))
+            : event.tags.toLowerCase().includes(search)) 
+        : false;
+      const matchesEventType = !currentEvent || event.eventType === currentEvent;
+      return matchesEventType && (inTitle || inTags);
+    })
+  : [];
 
   return (
     <main className="bg-body-secondary">
       <div className='container'>
-      <Header />
+      <Header onSearch={setSearchTerm} />
       <div className="d-flex justify-content-between align-items-center">
-      <p className="h1">Meetup Events</p>
+      <p className="fs-1">Meetup Events</p>
       <EventType currentEvent={currentEvent} setCurrentEvent={setCurrentEvent} />
       </div>
 
@@ -47,10 +58,10 @@ const App = () => {
                   }><img
                   src={m.image}
                   alt={m.title}
-                  style={{ height: "200px", objectFit: "cover", width: "100%" }}
+                  style={{ height: "200px", objectFit: "cover", width: "100%" }} className='img-fluid rounded'
                 /></Link>
-                <div>{m.date}</div>
-                <strong>{m.title}</strong>
+                <div className="text-body-secondary">{m.date}</div>
+                <strong className='h5'>{m.title}</strong>
               </div>
             </div>
           ))

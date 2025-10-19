@@ -26,6 +26,7 @@ const DesignWorkshop = () => {
                   <strong>Marketing Experts</strong>
                 </p>
                 <img
+                className="img-fluid rounded"
                   src={d.image}
                   alt={d.title}
                   style={{
@@ -49,7 +50,7 @@ const DesignWorkshop = () => {
                 </p>
                 <h3>Event Tags:</h3>
                 <button  className="btn btn-danger me-4">
-                  Marketing
+                  Design
                 </button>
                 <button  className="btn btn-danger">
                   Digital
