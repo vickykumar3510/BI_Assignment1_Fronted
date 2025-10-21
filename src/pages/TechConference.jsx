@@ -8,7 +8,8 @@ const TechConference = () => {
   //console.log(data);
 
   return (
-    <main className="bg-body-secondary">
+    <main className="bg-body-secondary min-vh-100 py-4">
+      <div className="container - fluid">
       <div className="container">
       <Header />
 
@@ -18,9 +19,9 @@ const TechConference = () => {
       <div className="row">
         {data && data.length > 0 ? (
           data.map((d) => (
-            <div key={d._id} className="row mb-4">
-              <div className="col-8">
-                <p className="h1">{d.title}</p>
+            <div key={d._id} className="row mb-5">
+              <div className="col-12 col-lg-8 mb-4 mb-lg-0">
+                <p className="h1 fw-bold">{d.title}</p>
                 <p>
                   Hosted By: <br/>
                   <strong>Marketing Experts</strong>
@@ -62,8 +63,8 @@ const TechConference = () => {
                 </button>
               </div>
             
-              <div className="col-4">
-                <div className="card p-3 mb-3">
+              <div className="col-12 col-lg-4">
+                <div className="card p-3 mb-3 shadow-sm border-0">
                   <div>{d.date} to </div> Thu Jul 13 02023 at 7:00:00 PM IST
                   <div className="mt-3"> <i className="fas fa-map-marker-alt"></i>
                     Marketing City
@@ -77,7 +78,7 @@ const TechConference = () => {
 
                 <div className="card p-3">
                   <h5>Speakers (2)</h5>
-                  <div className="d-flex mt-2">
+                  <div className="d-flex mt-2 flex-wrap justify-content-center gap-3">
                     <div className="me-3 text-center">
                       <img
                         src="https://media.istockphoto.com/id/1387644817/photo/outdoor-image-of-gorgeous-positive-lady-with-charming-smile-and-loose-gray-hair-enjoying-nice.jpg?s=612x612&w=0&k=20&c=0GKocLBV61waG0dakvfkhX_TgOYahbqrnGO1xa7jULY="
@@ -110,7 +111,7 @@ const TechConference = () => {
                 </div>
 
                 <div className="my-4 text-center">
-                  <button className="btn btn-danger w-50">RSVP</button>
+                  <button className="btn btn-danger w-75 w-lg-75">RSVP</button>
                 </div>
               </div>
             </div>
@@ -118,6 +119,7 @@ const TechConference = () => {
         ) : (
           <p>No event found</p>
         )}
+      </div>
       </div>
       </div>
     </main>

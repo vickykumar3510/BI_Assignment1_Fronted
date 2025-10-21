@@ -4,8 +4,8 @@ const Header = ({ onSearch }) => {
   }
 
   return (
-    <main className="bg-body-secondary">
-      <div className="d-flex align-items-center">
+    <main className="bg-body-secondary p-2">
+      <div className="container d-flex flex-column flex-md-row align-items-center">
         <p className="text-danger fs-5 fw-bold mt-4"><i className="h1">meetup</i></p>
 
         <input

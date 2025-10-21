@@ -24,11 +24,12 @@ const App = () => {
   : [];
 
   return (
-    <main className="bg-body-secondary">
-      <div className='container'>
+    <main className="bg-body-secondary min-vh-100 py-4">
+      <div className='container-fluid'>
+        <div className='container'>
       <Header onSearch={setSearchTerm} />
-      <div className="d-flex justify-content-between align-items-center">
-      <p className="fs-1">Meetup Events</p>
+      <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+      <p className="fs-1 text-center text-md-start mb-0">Meetup Events</p>
       <EventType currentEvent={currentEvent} setCurrentEvent={setCurrentEvent} />
       </div>
 
@@ -38,9 +39,9 @@ const App = () => {
       <div className="row">
         {filteredEvents && filteredEvents.length > 0 ? (
           filteredEvents.map((m) => (
-            <div className="col-4" key={m._id}>
-              <div className="card my-4 p-2">
-                <div className='mb-2'>{m.eventType}</div>
+            <div className="col-12 col-sm-6 col-lg-4" key={m._id}>
+              <div className="card my-3 shadow-sm border-0 p-2">
+                <div className='px-3 pt-3 text-muted small'>{m.eventType}</div>
                 <Link to={
                     m.title === "Tech Conference"
                       ? "/techConference"
@@ -58,7 +59,7 @@ const App = () => {
                   }><img
                   src={m.image}
                   alt={m.title}
-                  style={{ height: "200px", objectFit: "cover", width: "100%" }} className='img-fluid rounded'
+                  style={{ height: "200px", objectFit: "cover", width: "100%" }} className='img-fluid rounded-top'
                 /></Link>
                 <div className="text-body-secondary">{m.date}</div>
                 <strong className='h5'>{m.title}</strong>
@@ -68,6 +69,7 @@ const App = () => {
         ) : (
           <p>No events found.</p>
         )}
+      </div>
       </div>
       </div>
     </main>
