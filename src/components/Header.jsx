@@ -4,17 +4,18 @@ const Header = ({ onSearch }) => {
   }
 
   return (
-    <main className="bg-body-secondary p-2">
-      <div className="container d-flex flex-column flex-md-row align-items-center">
-        <p className="text-danger fs-5 fw-bold mt-4"><i className="h1">meetup</i></p>
-
+    <main className="bg-body-secondary">
+      <div className="container">
+        <div className="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <p className="text-danger fs-5 fw-bold mb-0"><i className="h1">meetup</i></p>
         <input
           type="text"
           placeholder="search by title and tags"
           className="form-control ms-auto"
-          style={{ width: "250px", height: "38px" }}
+          style={{ maxWidth: "280px", width: "100%", height: "40px" }}
           onChange={handleInput}
         />
+      </div>
       </div>
       <hr />
     </main>

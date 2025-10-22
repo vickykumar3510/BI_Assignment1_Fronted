@@ -21,7 +21,7 @@ const Conference2 = () => {
           data.map((d) => (
             <div key={d._id} className="row mb-5">
               <div className="col-12 col-lg-8 mb-4 mb-lg-0">
-                <p className="h1 fw-bold">{d.title}</p>
+                <p className="h1">{d.title}</p>
                 <p>
                   Hosted By: <br/>
                   <strong>Marketing Experts</strong>

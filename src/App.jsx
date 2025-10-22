@@ -28,11 +28,11 @@ const App = () => {
       <div className='container-fluid'>
         <div className='container'>
       <Header onSearch={setSearchTerm} />
-      <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
-      <p className="fs-1 text-center text-md-start mb-0">Meetup Events</p>
+      <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 mb-4">
+      <p className="fs-1 mb-0 text-md-start text-center text-nowrap">Meetup Events</p>
       <EventType currentEvent={currentEvent} setCurrentEvent={setCurrentEvent} />
       </div>
-
+      
       {loading && <p>Loading...</p>}
       {error && <p>An error occurred while fetching the meetings.</p>}
 
@@ -41,7 +41,7 @@ const App = () => {
           filteredEvents.map((m) => (
             <div className="col-12 col-sm-6 col-lg-4" key={m._id}>
               <div className="card my-3 shadow-sm border-0 p-2">
-                <div className='px-3 pt-3 text-muted small'>{m.eventType}</div>
+                <div className='px-3 pt-3 text-muted fs-6'>{m.eventType}</div>
                 <Link to={
                     m.title === "Tech Conference"
                       ? "/techConference"
