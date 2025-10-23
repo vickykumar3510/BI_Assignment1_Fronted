@@ -9,7 +9,7 @@ const Conference2 = () => {
 
   return (
     <main className="bg-body-secondary min-vh-100 py-4">
-      <div className="container - fluid">
+      <div className="container-fluid px-3">
       <div className="container">
       <Header />
 
@@ -32,14 +32,15 @@ const Conference2 = () => {
                   alt={d.title}
                   style={{
                     width: "100%",
-                    height: "300px",
+                    height: "auto",
+                    maxHeight: "250px",
                     objectFit: "cover",
                     marginBottom: "1rem",
                   }}
                 />
 
                 <h2>Details:</h2>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Unlock the secrets of data-driven promotion at the Data-Driven Marketing Summit, carefully curated by Analytical Experts for professionals seeking measurable results. Enjoy this immersive session on November 5th, 11:00 AM to 1:30 PM at Analysis Tower, 101 Metrics Boulevard, New City. Keynote speakers Shruti Gupta, Data Analyst, and Deepak Mishra, PPC Strategist, will break down advanced ROI tracking, AI-powered tools, and automation systems for modern business. Additional highlights include take-home material kits, real-life campaign case studies, and a roundtable for audience questions. Eligibility starts at age 18, with a ticket fee of ₹3,600. Smart casual attire is recommended for all attendees.
                 </p>
                 <h2>Additional Information:</h2>
@@ -50,17 +51,20 @@ const Conference2 = () => {
                   <strong>Age Restrictions:</strong> 18 and above
                 </p>
                 <h3>Event Tags:</h3>
-                <button  className="btn btn-danger me-4">
+                <div className="d-flex flex-row gap-2 flex-wrap align-items-center">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Targets
                 </button>
-                <button  className="btn btn-danger">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Followup
                 </button>
+                </div>
               </div>
             
               <div className="col-12 col-lg-4">
+                <div className="row">
                 <div className="card p-3 mb-3 shadow-sm border-0">
-                  <div>{d.date} to</div>Mon Jul 13 02023 at 7:00:00 PM IST
+                  <div>{d.date} to</div>Mon Jul 13 02023 at 7:00:00 PM
                   <div className="mt-3">
                     Marketing City
                     <br />
@@ -109,6 +113,7 @@ const Conference2 = () => {
                   <button className="btn btn-danger w-75 w-lg-75">RSVP</button>
                 </div>
               </div>
+            </div>
             </div>
           ))
         ) : (

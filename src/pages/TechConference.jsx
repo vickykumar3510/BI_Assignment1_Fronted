@@ -9,7 +9,7 @@ const TechConference = () => {
 
   return (
     <main className="bg-body-secondary min-vh-100 py-4">
-      <div className="container - fluid">
+      <div className="container-fluid px-3">
       <div className="container">
       <Header />
 
@@ -32,14 +32,15 @@ const TechConference = () => {
                   alt={d.title}
                   style={{
                     width: "100%",
-                    height: "300px",
+                    height: "auto",
+                    maxHeight: "250px",
                     objectFit: "cover",
                     marginBottom: "1rem",
                   }}
                 />
 
                 <h2>Details:</h2>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Stay ahead of the game in the dynamic field of digital marketing by attending the Marketing Seminar
                     organized by Marketing Experts. This offline seminar will be held on August 15th from 10:00 AM to 12:00
                     PM at Marketing City, situated at 789 Marketing Avenue, City. Join industry leaders Sarah Johnson,
@@ -55,17 +56,20 @@ const TechConference = () => {
                   <strong>Age Restrictions:</strong> 18 and above
                 </p>
                 <h3>Event Tags:</h3>
-                <button  className="btn btn-danger me-4">
+                <div className="d-flex flex-row gap-2 flex-wrap align-items-center">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Tech
                 </button>
-                <button  className="btn btn-danger">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Digital
                 </button>
+                </div>
               </div>
             
               <div className="col-12 col-lg-4">
+                <div className="row">
                 <div className="card p-3 mb-3 shadow-sm border-0">
-                  <div>{d.date} to </div> Thu Jul 13 02023 at 7:00:00 PM IST
+                  <div>{d.date} to </div> Thu Jul 13 02023 at 7:00:00 PM
                   <div className="mt-3"> <i className="fas fa-map-marker-alt"></i>
                     Marketing City
                     <br />
@@ -114,6 +118,7 @@ const TechConference = () => {
                   <button className="btn btn-danger w-75 w-lg-75">RSVP</button>
                 </div>
               </div>
+            </div>
             </div>
           ))
         ) : (

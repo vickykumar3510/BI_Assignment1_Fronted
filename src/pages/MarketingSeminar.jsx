@@ -9,7 +9,7 @@ const MarketingSeminar = () => {
 
   return (
     <main className="bg-body-secondary min-vh-100 py-4">
-      <div className="container - fluid">
+      <div className="container-fluid px-3">
       <div className="container">
       <Header />
 
@@ -32,14 +32,15 @@ const MarketingSeminar = () => {
                   alt={d.title}
                   style={{
                     width: "100%",
-                    height: "300px",
+                    height: "auto",
+                    maxHeight: "250px",
                     objectFit: "cover",
                     marginBottom: "1rem",
                   }}
                 />
 
                 <h2>Details:</h2>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Boost your online strategy by attending the Social Media Marketing Bootcamp, a must for marketers looking to stay ahead in today’s changing landscape. Hosted by Career Marketers, this interactive session is slated for July 22nd, 9:00 AM to 12:00 PM at Success Center, 321 Branding Road, Metro City. Learn from digital experts Rashmi Patel, Social Media Analyst, and Sunil Kumar, Brand Specialist, as they dive into practical ways to grow engagement, create viral content, and maximize the latest platforms. The agenda includes practical exercises, live demonstrations, and resource handouts. Tickets, priced at ₹3,200, are for individuals aged 18+. Please wear smart casual attire and be ready for a high-energy event.
                 </p>
                 <h2>Additional Information:</h2>
@@ -50,17 +51,20 @@ const MarketingSeminar = () => {
                   <strong>Age Restrictions:</strong> 18 and above
                 </p>
                 <h3>Event Tags:</h3>
-                <button  className="btn btn-danger me-4">
+                <div className="d-flex flex-row gap-2 flex-wrap align-items-center">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Marketing
                 </button>
-                <button  className="btn btn-danger">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Sales
                 </button>
+                </div>
               </div>
             
               <div className="col-12 col-lg-4">
+                <div className="row">
                 <div className="card p-3 mb-3 shadow-sm border-0">
-                  <div>{d.date} to</div>Tue Aug 15 02023 at 10:00:00 PM IST
+                  <div>{d.date} to</div>Tue Aug 15 02023 at 10:00:00 PM
                   <div className="mt-3">
                     Marketing City
                     <br />
@@ -102,6 +106,7 @@ const MarketingSeminar = () => {
                       <div>Michael Brown</div>
                       <small>SEO Specialist</small>
                     </div>
+                  </div>
                   </div>
                 </div>
 

@@ -9,8 +9,9 @@ const Conference1 = () => {
 
   return (
     <main className="bg-body-secondary min-vh-100 py-4">
-      <div className="container - fluid">
-      <div className="container">
+      <div className="container-fluid">
+        <div className="container">
+      
       <Header />
 
       {loading && <p>Loading...</p>}
@@ -32,14 +33,15 @@ const Conference1 = () => {
                   alt={d.title}
                   style={{
                     width: "100%",
-                    height: "300px",
+                    height: "auto",
+                    maxHeight: "300px",
                     objectFit: "cover",
                     marginBottom: "1rem",
                   }}
                 />
 
                 <h2>Details:</h2>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Step into the future of online branding at the Brand Growth Conference from Strategy Network, designed to unlock your business’s digital potential. Scheduled for October 18th, 3:00 PM to 5:30 PM at Vision Point, 555 Campaign Avenue, Uptown, this event welcomes participants to a world of advanced digital marketing knowledge. Join Neha Singh, Digital Growth Manager, and Ravi Chauhan, SEO Advisor, to explore groundbreaking advertising strategies, AI-powered analytics, and influencer collaborations. Enjoy expert-led talks followed by group workshops and networking tea breaks. Open to those 18 and older, entry tickets cost ₹3,500. Smart casual dress is suggested for this premium seminar.
                 </p>
                 <h2>Additional Information:</h2>
@@ -50,17 +52,20 @@ const Conference1 = () => {
                   <strong>Age Restrictions:</strong> 18 and above
                 </p>
                 <h3>Event Tags:</h3>
-                <button  className="btn btn-danger me-4">
+                <div className="d-flex flex-row gap-2 flex-wrap align-items-center">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Tech
                 </button>
-                <button  className="btn btn-danger">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Digital
                 </button>
+                </div>
               </div>
             
               <div className="col-12 col-lg-4">
+                <div className="row">
                 <div className="card p-3 mb-3 shadow-sm border-0">
-                  <div>{d.date} to</div>Thu Sep 13 02023 at 7:00:00 PM IST
+                  <div>{d.date} to </div>Thu Sep 13 02023 at 7:00:00 PM
                   <div className="mt-3">
                     Marketing City
                     <br />
@@ -109,6 +114,7 @@ const Conference1 = () => {
                   <button className="btn btn-danger w-75 w-lg-75">RSVP</button>
                 </div>
               </div>
+            </div>
             </div>
           ))
         ) : (

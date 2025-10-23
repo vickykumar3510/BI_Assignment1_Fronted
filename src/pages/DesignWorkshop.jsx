@@ -9,7 +9,7 @@ const DesignWorkshop = () => {
 
   return (
     <main className="bg-body-secondary min-vh-100 py-4">
-      <div className="container - fluid">
+      <div className="container-fluid px-3">
       <div className="container">
       <Header />
 
@@ -32,14 +32,15 @@ const DesignWorkshop = () => {
                   alt={d.title}
                   style={{
                     width: "100%",
-                    height: "300px",
+                    height: "auto",
+                    maxHeight: "250px",
                     objectFit: "cover",
                     marginBottom: "1rem",
                   }}
                 />
 
                 <h2>Details:</h2>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Advance your digital expertise by joining the Comprehensive Digital Marketing Workshop, created for ambitious professionals seeking real growth. This event takes place on September 10th from 2:00 PM to 4:30 PM at Innovate Hub, 456 Marketing Street, Downtown. Participate in engaging sessions with Priya Sharma, Senior Content Strategist, and Amit Verma, Analytics Consultant, as they demonstrate innovative techniques in social campaigns and data-driven advertising with hands-on activities and real-world examples. The workshop also features a Q&A, networking opportunities, and digital resources for all who attend. Open to ages 18 and above, with tickets at ₹2,500. Dress code is smart casual for a relaxed but professional setting.
                 </p>
                 <h2>Additional Information:</h2>
@@ -50,17 +51,20 @@ const DesignWorkshop = () => {
                   <strong>Age Restrictions:</strong> 18 and above
                 </p>
                 <h3>Event Tags:</h3>
-                <button  className="btn btn-danger me-4">
+                <div className="d-flex flex-row gap-2 flex-wrap align-items-center">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Design
                 </button>
-                <button  className="btn btn-danger">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Digital
                 </button>
+                </div>
               </div>
             
               <div className="col-12 col-lg-4">
+                <div className="row">
                 <div className="card p-3 mb-3 shadow-sm border-0">
-                  <div>{d.date} to</div>Mon Jul 10 02023 at 2:00:00 PM IST
+                  <div>{d.date} to</div>Mon Jul 10 02023 at 2:00:00 PM
                   <div className="mt-3">
                     Marketing City
                     <br />
@@ -109,6 +113,7 @@ const DesignWorkshop = () => {
                   <button className="btn btn-danger w-75 w-lg-75">RSVP</button>
                 </div>
               </div>
+            </div>
             </div>
           ))
         ) : (

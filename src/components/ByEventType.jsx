@@ -13,7 +13,7 @@ const EventType = ({ currentEvent, setCurrentEvent }) => {
         <option value="" >Select Event Type</option>
         <option value="Offline Event">Offline Event</option>
         <option value="Online Event">Online Event</option>
-        <option value="Offline/Online Event">Both</option>
+        <option value="">Both</option>
       </select>
     </div>
     </div>

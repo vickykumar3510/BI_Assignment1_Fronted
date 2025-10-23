@@ -9,7 +9,7 @@ const Conference3 = () => {
 
   return (
     <main className="bg-body-secondary min-vh-100 py-4">
-      <div className="container - fluid">
+      <div className="container-fluid px-3">
       <div className="container">
       <Header />
 
@@ -32,14 +32,15 @@ const Conference3 = () => {
                   alt={d.title}
                   style={{
                     width: "100%",
-                    height: "300px",
+                    height: "auto",
+                    maxHeight: "250px",
                     objectFit: "cover",
                     marginBottom: "1rem",
                   }}
                 />
 
                 <h2>Details:</h2>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Stay ahead in creative marketing by attending the Creative Campaign Seminar by Promotion Gurus, a hub for forward-thinking marketers. Attend on August 28th from 4:00 PM to 6:30 PM at Idea Hall, 222 Promotion Lane, City Center, and be part of an experience where creativity meets strategy. Expect to hear from Meera Desai, Campaign Manager, and Vikram Joshi, Email Expert, as they unveil cutting-edge campaign designs, audience targeting secrets, and automation tools. Activities include live brainstorming, templates to take home, and a networking mixer at the end. For guests 18+, the ticket price is ₹2,800, with a smart casual dress code to maintain a welcoming atmosphere.
                 </p>
                 <h2>Additional Information:</h2>
@@ -50,17 +51,20 @@ const Conference3 = () => {
                   <strong>Age Restrictions:</strong> 18 and above
                 </p>
                 <h3>Event Tags:</h3>
-                <button  className="btn btn-danger me-4">
+                <div className="d-flex flex-row gap-2 flex-wrap align-items-center">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Marketing
                 </button>
-                <button  className="btn btn-danger">
+                <button  className="btn btn-danger btn-sm" style={{ minWidth: "100px" }}>
                   Production
                 </button>
               </div>
+              </div>
             
               <div className="col-12 col-lg-4">
+                <div className="row">
                 <div className="card p-3 mb-3 shadow-sm border-0">
-                  <div>{d.date} to</div>Thu Oct 12 02023 at 7:00:00 PM IST
+                  <div>{d.date} to</div>Thu Oct 12 02023 at 7:00:00 PM
                   <div className="mt-3">
                     Marketing City
                     <br />
@@ -108,6 +112,7 @@ const Conference3 = () => {
                 <div className="mt-3 text-center">
                   <button className="btn btn-danger w-75 w-lg-75">RSVP</button>
                 </div>
+              </div>
               </div>
             </div>
           ))
